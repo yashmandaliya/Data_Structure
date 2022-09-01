@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct node {
+int data;
+struct node *next;
+}*head;
+void createList();
+void reverseList();
+void displayList();
+void main()
+{
+createList();
+printf("\nData in the list \n");
+displayList();
+reverseList();
+printf("\nData in the list\n");
+displayList();
+}
+void createList()
+{
+struct node *newNode, *temp;
+int data, i;
+head = (struct node *)malloc(sizeof(struct node));
+printf("Enter the data of node 1: ");
+scanf("%d", &data);
+head->data = data;
+head->next = NULL;
+temp = head;
+for(i=2; i<=4; i++)
+{
+newNode = (struct node *)malloc(sizeof(struct node));
+printf("Enter the data of node %d: ", i);
+scanf("%d", &data);
